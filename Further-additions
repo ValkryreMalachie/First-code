@@ -1,0 +1,48 @@
+def join_with_and(items):
+if not items:
+    return ""
+if len(items) == 1:
+    return str(items[0]
+if len(items) == 2
+    return f"{items[0]} and {items[1]}"
+    return f"{' , '.join{items[-1]}, and {items[-1]}"
+
+students = [
+    {"Gender": "Male", "Name": "Jack", "Age": "15", "Grade": "A"},
+    {"Gender": "Male", "Name": "Andrew", "Age": "14", "Grade": "B"},
+    {"Gender": "Male", "Name": "Joseph", "Age": "15", "Grade": "A"},
+    {"Gender": "Female", "Name": "Taylor", "Age": "14", "Grade": "C"}
+
+    all_names = [s['Name'] for s in students
+    all_ages = [s['Age'] for s in students
+    all_grades = [s['Grade'] for s in students
+    all_genders = [s['Gender'] for s in students
+
+    honor_roll = [s['Name'] for s in students if [s['Grade'] == 'A']
+    total_count1 = len(students)
+    honor_count = len (honor_roll)
+
+    print("\n Class sumamry")
+    print(f"Total students in school is {total_count1}")
+    print(f"Total honor roll students is {honor_count}")
+    print(f"Full roster {' , '.join(all_names)}")
+    print(f"Full honor roll is ({honor_count} students): {' , 'join.(honor_count)}")
+
+    print("\n Final class summary")
+    print(f"Greeting students, {join_with_and(all_names)}, there are {total_count1} students enrolled the class of 2026, and {honor_count} students enrolled in honors classes. 
+
+    # 1. Logic for Gender %
+male_count = all_genders.count("Male")
+male_percent = (male_count / total_count1) * 100
+
+# 2. Logic for Grammar (Singular/Plural)
+# This checks: if count is 1, use "", otherwise use "s"
+s_suffix = "" if total_count1 == 1 else "s"
+h_suffix = "" if honor_count == 1 else "s"
+
+print("\n--- Final Class Summary ---")
+print(f"Greeting students, {join_with_and(all_names)}.")
+print(f"There are {total_count1} student{s_suffix} enrolled in the class of 2026.")
+print(f"{male_percent:.1f}% of the class is Male.") # .1f rounds to 1 decimal place
+print(f"{honor_count} student{h_suffix} enrolled in honors classes.")
+                   
